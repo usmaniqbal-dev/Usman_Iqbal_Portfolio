@@ -1,4 +1,4 @@
-# Usman Ali Portfolio
+# Usman Iqbal Portfolio
 
 A modern, responsive, and feature-rich personal portfolio website built with React, TypeScript, Tailwind CSS, and Express.js.
 
