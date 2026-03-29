@@ -240,6 +240,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Email**: usmaniqbal@gmail.com
 - **LinkedIn**: [Usman Ali](https://www.linkedin.com/in/usmaniqbaltech/)
 - **GitHub**: [usmaniqbal-dev](https://github.com/usmaniqbal-dev)
+- **Live Demo**: https://wmnogjp7uedwg.ok.kimi.link/
 
 ---
 
