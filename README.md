@@ -186,7 +186,6 @@ To enable the contact form email functionality:
 
 3. **The actual recipient email is hidden in the backend**
    - Frontend shows: `usmaniqbal@gmail.com`
-   - Backend sends to: `su92-bscsm-f23-589@superior.edu.pk`
 
 ## Customization
 
@@ -244,4 +243,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by Usman Ali
+Built with ❤️ by Usman Iqbal
