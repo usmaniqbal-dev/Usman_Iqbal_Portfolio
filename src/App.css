@@ -1,0 +1,230 @@
+/* App-specific styles */
+
+/* Smooth scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper stacking context */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading animation for skill bars */
+@keyframes skill-fill {
+  from {
+    width: 0;
+  }
+}
+
+.skill-progress {
+  animation: skill-fill 1s ease-out forwards;
+}
+
+/* Card hover lift effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Button ripple effect */
+.btn-primary,
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:active::after,
+.btn-secondary:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Input focus animation */
+.input-field {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navigation link underline animation */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Social icon rotation on hover */
+.social-icon {
+  transition: transform 0.5s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) rotate(360deg);
+}
+
+/* Profile image 3D effect */
+.profile-image-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Particle canvas positioning */
+canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Modal backdrop blur */
+.modal-overlay {
+  backdrop-filter: blur(5px);
+}
+
+/* Admin dashboard sidebar scroll */
+.admin-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-card);
+}
+
+/* Success checkmark animation */
+.success-checkmark {
+  animation: success-pop 0.5s ease-out;
+}
+
+@keyframes success-pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Theme transition */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Disable transitions for performance during scroll */
+.is-scrolling * {
+  transition: none !important;
+}
+
+/* Mobile menu animation */
+@media (max-width: 1024px) {
+  .mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .mobile-menu-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .mobile-menu-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+}
+
+/* Scroll indicator animation */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Gradient border effect for cards */
+.gradient-border {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 16px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: var(--accent-gradient);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Text selection color */
+::selection {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
